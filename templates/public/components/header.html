@@ -1,0 +1,97 @@
+{% load static %}
+
+{% comment %}
+If adding any variables to this template, make sure they're also passed through in the 
+appropriate template tag.  This template isn't rendered with direct inclusion, so it gets
+context ~a little differently~.
+{% endcomment %}
+
+<header class="header">
+    <div class="grid-container" id="header__top">
+        <a href="{% url 'home' %}">
+            <img class="header__logo" width="250" src="{% static 'images/openstates_logo.png' %}" alt="OpenStates Logo">
+        </a>
+
+       <div id="header__login">
+         {% if user.is_authenticated %}
+         <a href="/accounts/profile/">{{ user.username|default:"Profile" }}</a> |
+         <a href="/accounts/logout/">Sign Out</a>
+         {% else %}
+         <a href="/accounts/login/">Log In</a> /
+         <a href="/accounts/signup/">Sign Up</a>
+         {% endif %}
+       </div>
+    </div>
+
+    {% if state_nav != "disabled" %}
+    <div class="navigation">
+        <div class="grid-container">
+            <div class="navigation__container">
+
+                <div class="navigation__section navigation__select-wrapper">
+                    <select class="navigation__select" onchange="window.location.href = '/' + this.value">
+                        {% if not state %}
+                            <option value="">Select a state</option>
+                        {% endif %}
+                        <!--{% for st in states %}
+                            <option value="{{ st.abbr|lower }}" {% if st.abbr|lower == state %}selected{% endif %}>{{ st.name }}</option>
+                        {% endfor %}-->
+                        <option value="Dambai">Oti Region - Dambai</option>
+                        <option value="Techiman">Bono East Region - Techiman</option>
+                        <option value="Goaso">Ahafo Region - Goaso</option>
+                        <option value="Sunyani">Bono Region - Sunyani</option>
+                        <option value="Nalerigu">North East Region - Nalerigu</option>
+                        <option value="Damango">Savannah Region - Damango</option>
+                        <option value="Sefwi Wiawso">Western North Region - Sefwi Wiawso</option>
+                        <option value="Sekondi">Western Region - Sekondi</option>
+                        <option value="Ho">Volta Region - Ho</option>
+                        <option value="Accra">Greater Accra Region - Accra</option>
+                        <option value="Koforidua">Eastern Region - Koforidua</option>
+                        <option value="Kumasi">Ashanti Region - Kumasi</option>
+                        <option value="Cape Coast">Central Region - Cape Coast</option>
+                        <option value="Tamale">Northern Region - Tamale</option>
+                        <option value="Bolgatanga">Upper East Region - Bolgatanga</option>
+                        <option value="Wa">Upper West Region - Wa</option>
+                    </select>
+                </div>
+
+                <ul class="navigation__section navigation__menu">
+                {% if state %}
+                    <li><a {% if state_nav == "overview" %} class="is-active" {% endif %} href="{% url 'state' state %}">Overview </a></li>
+                    <li><a {% if state_nav == "legislators" %} class="is-active" {% endif %} href="{% url 'legislators' state %}">Legislators</a></li>
+                    <li><a {% if state_nav == "bills" %} class="is-active" {% endif %} href="{% url 'bills' state %}">Bills</a></li>
+                    <li><a {% if state_nav == "committees" %} class="is-active" {% endif %} href="{% url 'committees' state %}">Committees</a></li>
+                {% endif %}
+                </ul>
+
+                <form action="/search/" id="header__search">
+                <div class="input-group">
+                    <input class="input-group-field" type="search" placeholder="Search bills and legislators..." name="query">
+                    {% if state %}
+                    <input type="hidden" name="state" value="{{ state }}">
+                    {% endif %}
+                    <div class="input-group-button">
+                        <button type="submit" class="button button--secondary">
+                          Search
+                        </button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    {% endif %}
+
+    <!-- <div class="donation-banner"> </div> -->
+
+    {% if messages %}
+    <div class="notification-banner">
+      <ul>
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+</header>

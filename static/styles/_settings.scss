@@ -1,0 +1,33 @@
+// Global Sass Variables
+
+// Typography
+$source-sans-pro: "Source Sans Pro";
+
+// Colors
+$color-royalblue: #0039c1;
+$color-darknavy: #0b6c37;
+$color-mint: #edfdff;
+
+$color-black: #222222;
+$color-gray: #dbe6f1;
+$color-gray-light: #edf3f8;
+$color-gray-lighter: #f9fdff;
+$color-gray-dark: #c8c8c8;
+$color-yellow-light: #fdf42d;
+$color-white: #ffffff;
+
+$color-blue: #00abff;
+$color-red: #9e0e44;
+$color-red-light: #ab1320;
+$color-yellow: #ffd035;
+$color-green: #2cceb0;
+$color-blue-dark: #07315b;
+
+// Color aliases
+
+$color-primary: $color-royalblue;
+$color-secondary: $color-darknavy;
+$color-accent: $color-mint;
+
+// Borders
+$global-border-width: 2px;

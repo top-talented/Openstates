@@ -1,0 +1,25 @@
+// Styleguide
+
+.card-swatch {
+    background-color: $color-white;
+    padding: 0;
+}
+
+.swatch {
+    padding-top: 75%;
+    border-bottom: 1px solid $color-gray;
+
+    @include breakpoint(large) {
+        padding-top: 50%;
+    }
+}
+.swatch__label {
+    border: 0;
+    background-color: initial;
+    padding: initial;
+}
+
+.section {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}

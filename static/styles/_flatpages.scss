@@ -1,0 +1,221 @@
+div.flatpage {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+div.about-openstates {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 5em;
+
+    @include breakpoint(medium) {
+        grid-template-columns: auto auto;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+div.partner-org {
+    display: grid;
+    a {
+        justify-self: center;
+    }
+    img {
+        height: 150px;
+        padding-bottom: 0.5rem;
+    }
+}
+
+div.registration-field input {
+    @include breakpoint(medium) {
+        width: 20em;
+    }
+}
+div.registration-field .errorlist {
+    background-color: $color-red;
+    display: block;
+    padding: 1em;
+    list-style: none;
+}
+
+div.tos h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.1em;
+}
+
+div.errorpage {
+    text-align: center;
+}
+
+input#donor-name {
+    width: 20em;
+}
+
+#donate-success {
+    border: $color-green 1px solid;
+    background-color: $color-green;
+    margin: 1em;
+    padding: 1em;
+    font-weight: 600;
+}
+#donate-failure {
+    border: $color-red 1px solid;
+    background-color: $color-red;
+    margin: 1em;
+    padding: 1em;
+    font-weight: 600;
+}
+
+// about/subscriptions/
+.subscriptions-howto {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 5em;
+    grid-row-gap: 2em;
+
+    @include breakpoint(large) {
+        grid-template-columns: auto auto;
+    }
+
+    img {
+        border: 2px solid $color-primary;
+        transition: transform 0.5s;
+    }
+    img:hover {
+        @include breakpoint(large) {
+            transform: scale(2);
+        }
+    }
+    figcaption {
+        text-align: center;
+    }
+}
+
+// homepage
+#homepage-section {
+    margin-top: 2rem;
+}
+.homepage-hero {
+    width: 100%;
+    text-align: left;
+}
+
+.region-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.region-card {
+    width: 120px;
+    height: 100px;
+    margin: 10px;
+    border: solid $color-red-light 1px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    background-color: $color-red-light;
+    color: $color-gray-lighter;
+}
+.card-name {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+.categ-card {
+    width: 120px;
+    height: 100px;
+    margin: 10px;
+    border: solid $color-gray-dark 1px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    background-color: $color-gray-dark;
+    color: $color-black;
+}
+.region-name {
+    margin: 0;
+    font-weight: 600;
+}
+.categ-name {
+    font-weight: 600;
+}
+
+.site-alert {
+    color: $color-red;
+}
+
+.homepage-grid {
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 3rem;
+    @include breakpoint(medium) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+        height: 100px;
+    }
+}
+
+.fyl-row {
+    display: grid;
+    grid-template-columns: auto;
+
+    @include breakpoint(medium) {
+        grid-template-columns: auto auto;
+    }
+}
+
+.blog-date {
+    color: $color-black;
+    font-weight: bold;
+}
+
+.donation-banner {
+    width: 100%;
+    text-align: center;
+    background-color: $color-yellow;
+    font-weight: 600;
+    padding: 1em;
+}
+.blm-banner {
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    padding: 1em 2em 1em 2em;
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.notification-banner {
+    text-align: center;
+    border-radius: 3px;
+    margin: 1em;
+    font-weight: 600;
+
+    li {
+        list-style: none;
+        padding: 0.3em 0 0.3em 0;
+    }
+    li.info {
+        background-color: $color-gray;
+    }
+    li.success {
+        background-color: $color-green;
+    }
+    li.warning {
+        background-color: $color-yellow;
+    }
+    li.error {
+        background-color: $color-red;
+        color: white;
+    }
+}
+
+dd {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}

@@ -1,0 +1,223 @@
+{% extends "../components/base.html" %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}Open States: discover politics in your state{% endblock %}
+{% block og_title %}Open States: discover politics in your state{% endblock %}
+{% block description %}Follow politics in your state legislature. Find your legislators, see how they vote and browse bills and committees.{% endblock %}
+
+{% block content %}
+
+<section class="section" id="homepage-section">
+    <div class="homepage-hero">
+        <h1 class="heading--large">Discover Laws & Regulations Around You</h1>
+        <p class="heading--small">Search by Regions</p>
+
+        <div class="region-grid">
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Oti Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Bono East Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Ahafo Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Bono Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">North East Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Savannah Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Western North Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Western Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Volta Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Greater Accra Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Eastern Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Ashanti Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Central Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Northern Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Upper East Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+            <div class="region-card">
+                <div class="card-name">
+                    <p class="region-name">Upper West Region</p>
+                    <p class="region-count">121 Items</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="homepage-hero">
+        <p class="heading--small">Search by Categories</p>
+
+        <div class="region-grid">
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Education</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">COVID 19</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Corruption</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Health</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Religion</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Sports</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Marriage</p>
+                </div>
+            </div>
+            <div class="categ-card">
+                <div class="card-name">
+                    <p class="categ-name">Transportation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="homepage-grid">
+        <div class="text-center">
+          <h2 class="heading--medium">Search &amp; Track Legislation</h2>
+          <img src="{% static "images/nounproject/political_2003975.svg" %}">
+          <form action="/search/">
+              <div class="input-group">
+                  <input class="input-group-field" type="search" placeholder="Coronavirus, Transportation, etc." name="query">
+                  <div class="input-group-button">
+                      <input type="submit" class="button button--primary" value="Search">
+                  </div>
+              </div>
+          </form>
+        </div>
+
+        <div class="text-center">
+            <h2 class="heading--medium">Find Your Legislators</h2>
+            <img src="{% static "images/nounproject/people_2911761.svg" %}">
+            <form action="/find_your_legislator/">
+              <div class="fyl-row">
+                <div class="input-group">
+                    <input class="input-group-field" type="search" placeholder="Enter Address" name="address">
+                    <div class="input-group-button">
+                        <input type="submit" class="button button--primary" value="Search">
+                    </div>
+                </div>
+
+                <div class="fyl-locate">
+                  <input type="submit" id="locate" class="button button--primary" name="geolocate" value="Use Current Location">
+                </div>
+              </div>
+            </form>
+        </div>
+
+        <div class="text-center">
+            <hr>
+            <h2 class="heading--medium">Dig In To Our Data &amp; APIs</h2>
+            <img height="150" src="{% static "images/nounproject/data_2921737.svg" %}">
+            <p style="margin-top: 1rem">
+                We make all of our data available for <a href="/data/">bulk download</a>
+                and via our powerful <a href="https://docs.openstates.org/en/latest/api/v2/">API</a>.
+                <br>
+                <br>
+                <a href="/accounts/profile/#apikey">Get an API key</a> to get started.
+            </p>
+        </div>
+
+        <div class="text-center">
+            <hr>
+            <h2 class="heading--medium">Project Updates</h2>
+            <img height="150" src="{% static "images/nounproject/news_750649.svg" %}">
+            {% for update in blog_updates %}
+            <div class="blog-update">
+                <div class="blog-date">{{ update.date|fdate:"%B %-d, %Y" }}</div>
+                <a href="{{ update.link }}">{{ update.title }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+{% endblock %}

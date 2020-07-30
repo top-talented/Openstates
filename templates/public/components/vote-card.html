@@ -1,0 +1,49 @@
+{% load custom_tags %}
+
+{% if vote.legislator_vote %}
+    <p>
+        {{ vote.legislator_vote.voter_name }} voted
+        <strong class="
+            {% if vote.legislator_vote.option == 'yes' %}
+                u-color--green
+            {% elif vote.legislator_vote.option == 'no' %}
+                u-color--red
+            {% endif %}
+            ">
+            {{ vote.legislator_vote.option|title }}
+        </strong>
+    </p>
+{% endif %}
+
+<a href="{% canonical_url vote %}">
+<div class="card">
+    <div>
+        <div class="flex-container align-justify">
+            <h3 class="heading--small">
+                    {% if vote.legislator_vote %}
+                    {{ vote.bill.identifier }}
+                    {% else %}
+                    {{ vote.motion_text }}
+                    {% endif %}
+            </h3>
+            <span class="label
+                {% if vote.result == 'pass' %}
+                    label--green
+                {% elif vote.result == 'fail' %}
+                    label--red
+                {% endif %}
+            ">
+                {{ vote.result|title }}
+            </span>
+        </div>
+        {% if vote.legislator_vote %}
+        <p>
+            {{ vote.motion_text }}
+        </p>
+        <!-- TODO: Add more bill info? -->
+        {% else %}
+        <p> {{ vote.organization.name }} </p>
+        {% endif %}
+    </div>
+</div>
+</a>

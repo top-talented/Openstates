@@ -1,0 +1,15 @@
+{% extends "public/components/base.html" %}
+{% load static %}
+
+{% block scripts %}
+  <script src="{% static "bundles/dashboards.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+
+{{ context|json_script:"context" }}
+
+<div data-hook="account-overview">
+</div>
+
+{% endblock %}
